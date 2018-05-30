@@ -17,8 +17,8 @@
     "typescript": "^2.8.3"
   },
   "scripts": {
-    "compile": "tsc",
-    "test": "jest -c config/jest.js",
-    "test:watch": "jest -c config/jest.js --watch --coverage false"
+    "compile": "tsc -p setup/tsconfig.build.json",
+    "test": "jest -c setup/jest.js",
+    "test:watch": "jest -c setup/jest.js --watch --coverage false"
   }
 }

@@ -43,7 +43,7 @@
      * What is here must reflect exactly what is in config/jest.js
     */
     "paths": {
-      "test": ["config/test"]
+      "test": ["setup/test"]
     },
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
@@ -62,5 +62,7 @@
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
+  "include": ["src/**/*"],
+  // The build configuration is in `config/tsconfig.build.json` and has some other excludes (tests and config folders)
   "exclude": ["node_modules", "lib"]
 }
