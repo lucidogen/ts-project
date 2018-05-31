@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "Blueprint for a ts library",
   "main": "index.js",
-  "repository": "https://github.com/lucidogen/ts-project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucidogen/ts-project.git"
+  },
   "author": "Gaspard Bucher",
   "license": "MIT",
   "private": false,

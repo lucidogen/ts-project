@@ -22,6 +22,7 @@ To make this work, you need:
 - [GH_TOKEN][github-tokens] and [NPM_TOKEN][npm-url] in the [travis env][travis-url]
 - Coveralls enabled for this project [coverals add][coveralls-add]
 - Update user and origin in `.travis.yml` (VERY IMPORTANT)
+- Make sure to set repository field in package.json (with type and url).
 
 [coveralls-add]: https://coveralls.io/repos/new
 [github-tokens]: https://github.com/settings/tokens
