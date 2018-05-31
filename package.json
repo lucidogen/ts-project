@@ -10,6 +10,7 @@
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "commitizen": "^2.10.1",
+    "coveralls": "^3.0.1",
     "cz-customizable": "^5.2.0",
     "cz-customizable-ghooks": "^1.5.0",
     "husky": "^0.14.3",
@@ -24,6 +25,7 @@
   },
   "scripts": {
     "build": "tsc -p setup/tsconfig.build.json",
+    "coverage:upload": "cat ./coverage/lcov.info | coveralls",
     "format": "npm run lint -- --fix && prettier --write \"src/**/*.ts\" \"src/**/*.css\" \"src/**/*.json\" \"*.json\" \"setup/**/*\"",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "precommit": "lint-staged",
