@@ -20,7 +20,8 @@ To make this work, you need:
 
 - [travis-ci][travis-url] enabled for the project
 - [GH_TOKEN][github-tokens] and [NPM_TOKEN][npm-url] in the [travis env][travis-url]
-- coveralls enabled for this project [coverals add][coveralls-add]
+- Coveralls enabled for this project [coverals add][coveralls-add]
+- Update user and origin in `.travis.yml` (VERY IMPORTANT)
 
 [coveralls-add]: https://coveralls.io/repos/new
 [github-tokens]: https://github.com/settings/tokens
