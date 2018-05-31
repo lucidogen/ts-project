@@ -14,9 +14,7 @@
     "coveralls": "^3.0.1",
     "cz-customizable": "^5.2.0",
     "cz-customizable-ghooks": "^1.5.0",
-    "husky": "^0.14.3",
     "jest": "^23.0.1",
-    "lint-staged": "^7.1.2",
     "prettier": "^1.13.3",
     "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
@@ -29,7 +27,6 @@
     "coverage:upload": "cat ./coverage/lcov.info | coveralls",
     "format": "npm run lint -- --fix && prettier --write \"src/**/*.ts\" \"src/**/*.css\" \"src/**/*.json\" \"*.json\" \"setup/**/*\"",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "precommit": "lint-staged",
     "release": "babel-node --presets env ./setup/release/index.js",
     "test": "jest -c setup/jest.js",
     "test:watch": "jest -c setup/jest.js --watch --coverage false"
@@ -41,22 +38,5 @@
     "cz-customizable": {
       "config": "setup/commitizen.js"
     }
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "tslint -c tslint.json --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.{md,css,json}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "dependencies": {
-    "@babel/preset-env": "^7.0.0-beta.49",
-    "babel-cli": "^6.26.0",
-    "md5": "^2.2.1",
-    "repo-cooker": "^3.2.0"
   }
 }

@@ -34,7 +34,7 @@ after_success:
   fi
   if [[ $TRAVIS_BRANCH == 'master' || $TRAVIS_BRANCH == 'next' ]] && [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then
     printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN\n" > ~/.npmrc
-    npm install babel-cli babel-preset-env repo-cooker md5
+    npm install --no-save babel-cli babel-preset-env repo-cooker md5
     npm run release -- --publish
   fi
 branches:
