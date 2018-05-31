@@ -1,7 +1,7 @@
 {
   "name": "@lucidogen/ts-project",
   "version": "0.0.0",
-  "description": "Modular development of Cerebral JS apps.",
+  "description": "Blueprint for a ts library",
   "main": "index.js",
   "repository": "https://github.com/lucidogen/ts-project",
   "author": "Gaspard Bucher",
