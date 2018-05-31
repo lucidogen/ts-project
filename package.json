@@ -9,7 +9,12 @@
   "private": false,
   "devDependencies": {
     "@types/jest": "^22.2.3",
+    "commitizen": "^2.10.1",
+    "cz-customizable": "^5.2.0",
+    "cz-customizable-ghooks": "^1.5.0",
     "jest": "^23.0.1",
+    "lint-staged": "^7.1.2",
+    "prettier": "^1.13.3",
     "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
@@ -17,8 +22,28 @@
     "typescript": "^2.8.3"
   },
   "scripts": {
-    "compile": "tsc -p setup/tsconfig.build.json",
+    "build": "tsc -p setup/tsconfig.build.json",
+    "format":
+      "npm run lint -- --fix && prettier --write \"src/**/*.ts\" \"src/**/*.css\" \"src/**/*.json\" \"*.json\" \"setup/**/*\"",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "precommit": "lint-staged",
     "test": "jest -c setup/jest.js",
     "test:watch": "jest -c setup/jest.js --watch --coverage false"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "setup/commitizen.js"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint -c tslint.json --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{md,css,json}": ["prettier --write", "git add"]
   }
 }

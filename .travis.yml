@@ -1,0 +1,45 @@
+sudo: false
+language: node_js
+node_js: '8'
+cache:
+  directories:
+  - node_modules
+git:
+  depth: 9999
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++-4.9-dev
+notifications:
+  email: false
+script:
+- |
+  if [[ $SKIP_TESTS != 'true' ]]; then
+    npm prune
+    npm run lint
+    npm test
+  fi
+after_success:
+- |
+  # if [[ $TRAVIS_SECURE_ENV_VARS == 'true' ]]; then
+  #   git remote set-url origin https://cerebraljs:${GH_TOKEN}@github.com/cerebral/cerebral;
+  #   git config --global user.email "bot@lucidogen.io";
+  #   git config --global user.name "Lucidogen Bot";
+  # fi
+  if [[ $TRAVIS_BRANCH == 'master' || $TRAVIS_PULL_REQUEST == 'true' ]]; then
+    # coverage already run during test phase
+    npm run coverage:upload;
+  fi
+  # if [[ $TRAVIS_BRANCH == 'master' || $TRAVIS_BRANCH == 'next' ]] && [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then
+  #   printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN\n" > ~/.npmrc
+  #   npm install repo-cooker
+  #   npm run release -- --publish
+  #   if [[ $TRAVIS_BRANCH == 'master' ]]; then
+  #     npm run deploy
+  #   fi
+  # fi
+branches:
+  except:
+  - "/^v\\d+\\.\\d+\\.\\d+$/"

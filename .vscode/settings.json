@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.tabSize": 2,
+  // Prettier
+  "editor.formatOnSave": true,
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+  // nvm use default ==> 8.11.1
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "tslint.nodePath": "node_modules",
+  "tslint.autoFixOnSave": true
+}
