@@ -7,6 +7,7 @@
   "author": "Gaspard Bucher",
   "license": "MIT",
   "private": false,
+  "types": "lib/index.d.ts",
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "commitizen": "^2.10.1",
@@ -29,8 +30,7 @@
     "format": "npm run lint -- --fix && prettier --write \"src/**/*.ts\" \"src/**/*.css\" \"src/**/*.json\" \"*.json\" \"setup/**/*\"",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "precommit": "lint-staged",
-    "prepublish": "npm run build",
-    "release": "babel-node --presets es2015 ./setup/release/index.js",
+    "release": "babel-node --presets env ./setup/release/index.js",
     "test": "jest -c setup/jest.js",
     "test:watch": "jest -c setup/jest.js --watch --coverage false"
   },
@@ -52,5 +52,11 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "babel-cli": "^6.26.0",
+    "md5": "^2.2.1",
+    "repo-cooker": "^3.2.0"
   }
 }

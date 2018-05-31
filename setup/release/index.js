@@ -22,7 +22,7 @@ cooker.cook('publish', [
     otherwise: [],
   },
   cook.writeVersionsToPackages,
-  cook.runNpmScript('prepublish'),
+  cook.runNpmScript('build'),
   cook.publishUnderTemporaryNpmTag,
   cook.byBranch,
   {
