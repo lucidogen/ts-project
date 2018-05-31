@@ -4,6 +4,13 @@ node_js: '8'
 cache:
   directories:
   - node_modules
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      # needed by nodegit (repo-cooker)
+      - libstdc++-4.9-dev
 git:
   depth: 9999
 notifications:
