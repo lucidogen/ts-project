@@ -14,7 +14,7 @@
 [commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat
 [commitizen-url]: http://commitizen.github.io/cz-cli/
 
-A blueprint for a typescript based library using tslint, prettier, repo-cooker, etc.
+A blueprint for a typescript based library using tslint, prettier, repo-cooker, commitizen, etc.
 
 To make this work, you need:
 
