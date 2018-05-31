@@ -6,18 +6,11 @@ cache:
   - node_modules
 git:
   depth: 9999
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - libstdc++-4.9-dev
 notifications:
   email: false
 script:
 - |
   if [[ $SKIP_TESTS != 'true' ]]; then
-    npm prune
     npm run lint
     npm test
   fi
