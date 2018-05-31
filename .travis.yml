@@ -23,11 +23,11 @@ script:
   fi
 after_success:
 - |
-  # if [[ $TRAVIS_SECURE_ENV_VARS == 'true' ]]; then
-  #   git remote set-url origin https://cerebraljs:${GH_TOKEN}@github.com/cerebral/cerebral;
-  #   git config --global user.email "bot@lucidogen.io";
-  #   git config --global user.name "Lucidogen Bot";
-  # fi
+  if [[ $TRAVIS_SECURE_ENV_VARS == 'true' ]]; then
+    git remote set-url origin https://cerebraljs:${GH_TOKEN}@github.com/cerebral/cerebral;
+    git config --global user.email "bot@lucidogen.io";
+    git config --global user.name "Lucidogen Bot";
+  fi
   if [[ $TRAVIS_BRANCH == 'master' || $TRAVIS_PULL_REQUEST == 'true' ]]; then
     # coverage already run during test phase
     npm run coverage:upload;
