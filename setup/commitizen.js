@@ -28,7 +28,7 @@ module.exports = {
     { value: 'revert', name: 'revert:   Revert to a commit' },
   ],
 
-  scopes: [{ name: 'blocks' }],
+  scopes: [{ name: 'ts-project' }],
 
   // it needs to match the value for field type. Eg.: 'fix'
   scopeOverrides: {

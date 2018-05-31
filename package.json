@@ -1,9 +1,9 @@
 {
-  "name": "@lucidogen/blocks",
+  "name": "@lucidogen/ts-project",
   "version": "0.0.0",
   "description": "Modular development of Cerebral JS apps.",
   "main": "index.js",
-  "repository": "https://github.com/lucidogen/blocks",
+  "repository": "https://github.com/lucidogen/ts-project",
   "author": "Gaspard Bucher",
   "license": "MIT",
   "private": false,
@@ -25,7 +25,8 @@
   "scripts": {
     "build": "tsc -p setup/tsconfig.build.json",
     "coverage:upload": "cat ./coverage/lcov.info | coveralls",
-    "format": "npm run lint -- --fix && prettier --write \"src/**/*.ts\" \"src/**/*.css\" \"src/**/*.json\" \"*.json\" \"setup/**/*\"",
+    "format":
+      "npm run lint -- --fix && prettier --write \"src/**/*.ts\" \"src/**/*.css\" \"src/**/*.json\" \"*.json\" \"setup/**/*\"",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "release": "babel-node --presets env ./setup/release/index.js",
     "test": "jest -c setup/jest.js",
