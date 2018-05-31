@@ -25,14 +25,11 @@ after_success:
     # coverage already run during test phase
     npm run coverage:upload;
   fi
-  # if [[ $TRAVIS_BRANCH == 'master' || $TRAVIS_BRANCH == 'next' ]] && [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then
-  #   printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN\n" > ~/.npmrc
-  #   npm install repo-cooker
-  #   npm run release -- --publish
-  #   if [[ $TRAVIS_BRANCH == 'master' ]]; then
-  #     npm run deploy
-  #   fi
-  # fi
+  if [[ $TRAVIS_BRANCH == 'master' || $TRAVIS_BRANCH == 'next' ]] && [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then
+    printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN\n" > ~/.npmrc
+    npm install babel-cli babel-preset-es2015 repo-cooker md5
+    npm run release -- --publish
+  fi
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"

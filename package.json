@@ -1,6 +1,6 @@
 {
-  "name": "blocks",
-  "version": "1.0.0",
+  "name": "@lucidogen/blocks",
+  "version": "0.0.0",
   "description": "Modular development of Cerebral JS apps.",
   "main": "index.js",
   "repository": "https://github.com/lucidogen/blocks",
@@ -29,6 +29,8 @@
     "format": "npm run lint -- --fix && prettier --write \"src/**/*.ts\" \"src/**/*.css\" \"src/**/*.json\" \"*.json\" \"setup/**/*\"",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "precommit": "lint-staged",
+    "prepublish": "npm run build",
+    "release": "babel-node --presets es2015 ./setup/release/index.js",
     "test": "jest -c setup/jest.js",
     "test:watch": "jest -c setup/jest.js --watch --coverage false"
   },
